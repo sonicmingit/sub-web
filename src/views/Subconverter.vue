@@ -289,22 +289,6 @@
     const tgBotLink = process.env.VUE_APP_BOT_LINK
     import axios from 'axios';
     import yaml from 'js-yaml';
-
-    const aaa = `---
-apiVersion: v1
-data:
-  tls.crt: c2Rhc2Q=
-  tls.key: YXNkYXNk
-immutable: false
-kind: Secret
-metadata:
-  name: aaa
-  namespace: default
-  resourceVersion: '188835969'
-type: kubernetes.io/tls`
-
-    console.log(yaml.load(aaa))
-
     export default {
         data() {
             return {
@@ -407,7 +391,6 @@ type: kubernetes.io/tls`
                     this.options.backendOptions = config.backendOptions;
                     // 资源地址
                     this.options.remoteConfig = config.remoteConfig;
-
                 }).catch((error) => {
                     console.log(error)
                 });
